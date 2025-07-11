@@ -1,0 +1,8 @@
+CREATE TABLE files (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  url VARCHAR(255) NOT NULL,
+  qr_code_path VARCHAR(255) NOT NULL,
+  pdf_path VARCHAR(255) NOT NULL,
+  pdf_as_png_path VARCHAR(255) NOT NULL
+);
