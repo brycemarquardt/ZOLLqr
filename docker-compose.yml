@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   web:
     build: .
@@ -17,7 +15,7 @@ services:
     depends_on:
       - db
     volumes:
-      - storage:/app/storage
+      - ./storage:/app/storage
   db:
     image: mysql:8.0
     platform: linux/arm64/v8
@@ -25,7 +23,7 @@ services:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=${DB_NAME}
     volumes:
-      - db_data:/var/lib/mysql
+      - ./db_data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 volumes:
   db_data:
